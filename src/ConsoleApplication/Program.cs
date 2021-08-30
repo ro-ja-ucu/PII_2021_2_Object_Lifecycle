@@ -6,6 +6,7 @@
 
 using System;
 using ClassLibrary;
+using System.Collections.Generic;
 
 namespace ConsoleApplication
 {
@@ -19,9 +20,17 @@ namespace ConsoleApplication
         /// </summary>
         public static void Main()
         {
-            var train = new Train();
+            var train = new Train("-1");
             train.StartEngines();
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("\nHello World!\n");
+
+            var trains = new List<Train>();
+            for (var i = 0; i < 100; i++)
+            {
+                var newTrain = new Train(train.ToString());
+                trains.Add(newTrain);
+            }
+            Console.WriteLine($"{Train.InstanceCounter}");
         }
     }
 }

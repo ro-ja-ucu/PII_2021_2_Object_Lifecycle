@@ -27,7 +27,7 @@ namespace ConsoleApplication
             var trains = new List<Train>();
             for (var i = 0; i < 100; i++)
             {
-                var newTrain = new Train(train.ToString());
+                var newTrain = new Train(i.ToString());
                 trains.Add(newTrain);
             }
             Console.WriteLine($"{Train.InstanceCounter}");
